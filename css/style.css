@@ -1,0 +1,67 @@
+html, body {
+    background-color: #3d104b;
+    color: white;
+    height: 100%
+}
+
+.cust-cont {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shh {
+    opacity: 0;
+    animation: faseIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.shh.one {
+    animation-delay: 0.5s;
+}
+
+.shh.two {
+    animation-delay: 1s;
+}
+
+.shh.three {
+    animation-delay: 1.5s;
+}
+
+.shh.four {
+    animation-delay: 2s;
+}
+
+@keyframes faseIn {
+    from{opacity:0;} to {opacity:1}
+}
+
+.cust-div {
+    text-decoration: none;
+}
+
+.cust-div:hover {
+    background: rgba(0, 0, 0, 0.25);
+    transition: background .2s ease-in;
+    transform: scale(1);
+}
+
+.cust-butt {
+    /*background: rgba(255, 255, 255, 0.25);*/
+    font-size:3em;
+}
+
+.cust-butt-text {
+    font-size:25px;
+}
+
+.fontbody {
+    font-family: 'Raleway', sans-serif;
+}
+
+.header {
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+}
