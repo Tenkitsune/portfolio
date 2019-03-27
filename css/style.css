@@ -11,6 +11,25 @@ html, body {
     align-items: center;
 }
 
+.cust-bkgd {
+    background: linear-gradient(180deg, #4b0094, #da5eff);
+    animation: AnimationName 30s ease infinite;
+
+    @keyframes AnimationName {
+        0% {
+            background-position: 0% 50%
+        }
+
+        50% {
+            background-position: 100% 50%
+        }
+
+        100% {
+            background-position: 0% 50%
+        }
+    }
+}
+
 .shh {
     opacity: 0;
     animation: faseIn ease-in 1;
@@ -65,3 +84,4 @@ html, body {
     margin-bottom: 1rem;
     font-size: 3.5rem;
 }
+
