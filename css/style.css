@@ -12,22 +12,27 @@ html, body {
 }
 
 .cust-bkgd {
-    background: linear-gradient(180deg, #4b0094, #da5eff);
-    animation: AnimationName 30s ease infinite;
+    position: relative;
+    background: linear-gradient(145deg, #090122 0%, #1c0a3c 18%, #3a1f75 38%, #5430a8 52%, #2f57cc 68%, #081742 100%);
+    background-size: 300% 300%;
+    animation: auroraShift 22s ease infinite;
+}
 
-    @keyframes AnimationName {
-        0% {
-            background-position: 0% 50%
-        }
+.cust-bkgd::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 15% 12%, rgba(142, 94, 255, 0.20) 0%, transparent 18%),
+                radial-gradient(circle at 75% 12%, rgba(102, 181, 255, 0.17) 0%, transparent 16%),
+                radial-gradient(circle at 55% 70%, rgba(138, 112, 255, 0.14) 0%, transparent 20%),
+                radial-gradient(circle at 30% 60%, rgba(80, 145, 255, 0.08) 0%, transparent 22%);
+}
 
-        50% {
-            background-position: 100% 50%
-        }
-
-        100% {
-            background-position: 0% 50%
-        }
-    }
+@keyframes auroraShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .shh {
@@ -83,5 +88,69 @@ html, body {
 .header {
     margin-bottom: 1rem;
     font-size: 3.5rem;
+}
+
+/* New styles for enhanced landing layout */
+.profile-card {
+    max-width: 900px;
+    background: rgba(255,255,255,0.05);
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.tagline {
+    margin-top: 0.25rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.actions .btn {
+    margin: 0.25rem 0.4rem 0.25rem 0;
+}
+
+.social-btn { background: rgba(255,255,255,0.08); color: #e9e9ff; border: 1px solid rgba(255,255,255,0.12); display: inline-flex; align-items: center; transition: background .24s ease, border-color .24s ease, transform .18s ease; }
+.social-btn:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+.social-btn i,
+.social-btn .social-icon { margin-right: 0.45rem; }
+.social-btn .social-icon { width: 1.05em; height: 1.05em; display: inline-block; vertical-align: text-bottom; fill: currentColor; }
+.social-btn.twitter { color: #b4d8ff; border-color: rgba(180,216,255,0.24); }
+.social-btn.github { color: #f5f3ff; border-color: rgba(245,243,255,0.24); }
+.social-btn.linkedin { color: #bdd8ff; border-color: rgba(189,216,255,0.22); }
+.social-btn.bsky { color: #c8e5ff; border-color: rgba(200,229,255,0.28); }
+.social-btn.email { color: #e7c3ff; border-color: rgba(231,195,255,0.22); }
+.social-btn.resume { color: #f7f3ff; border-color: rgba(247,243,255,0.22); }
+
+.chips { display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem; }
+.chip { background: rgba(255,255,255,0.08); padding:0.45rem 0.7rem; border-radius:20px; font-weight:600; }
+
+.project-card { max-width:800px; background: rgba(0,0,0,0.18); border-radius:8px; }
+
+.muted { color: rgba(255,255,255,0.85); }
+
+@media (max-width: 576px) {
+    .header { font-size: 2.25rem; }
+    .avatar { width: 90px; height:90px; font-size:1.5rem }
 }
 
